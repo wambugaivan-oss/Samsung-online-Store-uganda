@@ -2670,7 +2670,7 @@ footer {
         for (let j = 0; j < allThumbs.length; j++) {
             allThumbs[j].style.borderColor = (j === currentIdx) ? "#0056b3" : "transparent";
             allThumbs[j].style.opacity = (j === currentIdx) ? "1" : "0.5";
-            if(j === currentIdx) allThumbs[j].scrollIntoView({behavior: "smooth", inline: "center"});
+            allThumbs[j].style.transform = (j === currentIdx) ? "scale(1.1)" : "scale(1)";
         }
         waBtn.href = `https://wa.me/${whatsappNum}?text=Hello, I'm interested in the ${currentItems[currentIdx].name}`;
     }
