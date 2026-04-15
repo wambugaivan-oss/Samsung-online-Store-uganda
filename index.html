@@ -2528,6 +2528,160 @@ footer {
     </div>
   </div>
 </section>
+<section id="samsung-ultimate-store" style="max-width: 1000px; margin: 20px auto; padding: 20px; background: #ffffff; border-radius: 20px; font-family: 'Inter', sans-serif; color: #111; border: 1px solid #d1d9e0; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+
+    <div id="categoryBar" style="display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none;">
+        <button onclick="filterCategory('ALL')" class="cat-btn active">ALL PRODUCTS</button>
+        <button onclick="filterCategory('SAMSUNG')" class="cat-btn">SAMSUNG PHONES</button>
+        <button onclick="filterCategory('NEW')" class="cat-btn">PIXEL PHONES</button>
+        <button onclick="filterCategory('TV')" class="cat-btn">SMART TVs</button>
+        <button onclick="filterCategory('LAPTOP')" class="cat-btn">LAPTOPS</button>
+        <button onclick="filterCategory('ACC')" class="cat-btn">ACCESSORIES</button>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div id="metroContainer" style="flex: 2; min-width: 320px; height: 320px; background: #f6f8fa; border-radius: 16px; border: 1px solid #e1e4e8; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 12px; overflow: hidden; position: relative;"></div>
+
+        <div style="flex: 1; min-width: 250px; background: #ffffff; border-radius: 16px; padding: 25px; border: 1px solid #e1e4e8; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h2 style="font-weight: 900; font-size: 20px; margin: 0; color: #000;">SAMSUNG <span style="color: #0056b3;">UGANDA</span></h2>
+                <p id="catLabel" style="color: #0056b3; font-size: 11px; margin: 5px 0; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">FULL INVENTORY</p>
+                <p style="color: #555; font-size: 13px; margin-bottom: 20px;">Shop B118 • Kampala Central</p>
+                
+                <div style="font-size: 13px; color: #333; line-height: 2; border-left: 3px solid #0056b3; padding-left: 15px;">
+                    <div style="color: #28a745; font-weight: bold;">✔ All Discounts Applied</div>
+                    <div>• 100% Genuine Stock</div>
+                    <div>• Wholesale Pricing</div>
+                    <div>• Delivery in 1 Hour</div>
+                </div>
+            </div>
+            <a id="waMainBtn" href="#" target="_blank" style="display: block; text-align: center; padding: 15px; background: #0056b3; color: #ffffff; text-decoration: none; border-radius: 10px; font-weight: 800; font-size: 14px; border-bottom: 4px solid #003d7a; text-transform: uppercase;">
+                ORDER ON WHATSAPP
+            </a>
+        </div>
+    </div>
+
+    <div id="metroThumbs" style="display: flex; overflow-x: auto; gap: 12px; padding-top: 20px; scrollbar-width: none;"></div>
+
+</section>
+
+<style>
+    .cat-btn {
+        background: #f1f3f5; border: 1px solid #dee2e6; color: #495057; padding: 8px 16px; border-radius: 20px;
+        font-size: 11px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: 0.3s; text-transform: uppercase;
+    }
+    .cat-btn.active { background: #0056b3; color: white; border-color: #0056b3; }
+    #metroThumbs::-webkit-scrollbar { display: none; }
+</style>
+
+<script>
+    const imgBase = "https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/";
+    const whatsappNum = "256700000000"; 
+    
+    const allItems = [
+        // --- RESTORED SAMSUNG PHONES ---
+        { name: 'S24 ULTRA', type: 'SAMSUNG', file: 'samsung-galaxy-s24-ultra-swap-kampala.jpga0b.jpg', old: '4,800,000', price: '4,450,000' },
+        { name: 'S23 ULTRA', type: 'SAMSUNG', file: 'samsung-s23-ultra-kampala-priice.jpg', old: '3,500,000', price: '3,150,000' },
+        { name: 'S21 ULTRA', type: 'SAMSUNG', file: 'samsung-s21-ultra-used-phones-uganda.jpg', old: '1,900,000', price: '1,650,000' },
+        { name: 'Z FOLD 6', type: 'SAMSUNG', file: 'samsung-galaxy-z-fold-6-wholesale-b118.jpg.jpg', old: '6,500,000', price: '5,900,000' },
+        { name: 'S22 ULTRA', type: 'SAMSUNG', file: 'samsung-galaxy-s22-ultra-b118-basement.jpg', old: '2,400,000', price: '2,150,000' },
+        { name: 'S20 ULTRA', type: 'SAMSUNG', file: 'samsung-galaxy-s20-ultra-wholesale.jpg', old: '1,500,000', price: '1,250,000' },
+
+        // --- PIXEL PHONES ---
+        { name: 'PIXEL 9 PRO', type: 'NEW', file: 'Pixel_9_Pro_Group.jpg.jpg', old: '5,500,000', price: '4,950,000' },
+        { name: 'PIXEL 8 PRO', type: 'NEW', file: 'Pixel_8_Pro.jpg', old: '3,800,000', price: '3,450,000' },
+        { name: 'PIXEL 7 PRO', type: 'NEW', file: 'Pixel_7_Pro.jpg', old: '2,400,000', price: '2,150,000' },
+        { name: 'PIXEL 7a', type: 'NEW', file: 'Pixel_7a.jpg.jpg', old: '1,750,000', price: '1,450,000' },
+        { name: 'PIXEL 6 PRO', type: 'NEW', file: 'Pixel_6_Pro.jpg.jpg', old: '1,800,000', price: '1,550,000' },
+
+        // --- LAPTOPS ---
+        { name: 'DELL TOUCHSCREEN', type: 'LAPTOP', file: 'Dell_Touchscreen_Laptop.jpg', old: '2,800,000', price: '2,450,000' },
+        { name: 'HP PREMIUM 2', type: 'LAPTOP', file: 'HP_Premium_Laptop_2.jpg', old: '3,100,000', price: '2,750,000' },
+        { name: 'HP PREMIUM 1', type: 'LAPTOP', file: 'HP_Premium_Laptop_1.jpg', old: '2,200,000', price: '1,950,000' },
+        { name: 'HP LATEST', type: 'LAPTOP', file: 'HP_Premium_Laptop_Latest.jpg', old: '3,500,000', price: '3,150,000' },
+
+        // --- TVs ---
+        { name: 'SAMSUNG 4K TV', type: 'TV', file: 'Samsung_Latest_TV.jpg.jpg', old: '3,200,000', price: '2,850,000' },
+        { name: 'LG UHD TV', type: 'TV', file: 'LG_UHD_TV.jpg', old: '2,600,000', price: '2,300,000' },
+        { name: 'HISENSE 4K', type: 'TV', file: 'hisense-smart-tv-4k-price-uganda.jpg.jpg', old: '2,400,000', price: '2,100,000' },
+        { name: 'CURVED SUHD', type: 'TV', file: 'Samsung_Curved_SUHD_TV.jpg', old: '4,200,000', price: '3,750,000' },
+        { name: 'CRYSTAL UHD', type: 'TV', file: 'Samsung_Crystal_UHD_TV.jpg', old: '2,900,000', price: '2,550,000' },
+
+        // --- ACCESSORIES ---
+        { name: '25W CHARGER', type: 'ACC', file: 'Samsung_25W_Charger.jpg.jpg', old: '110,000', price: '85,000' },
+        { name: '45W PD ADAPTER', type: 'ACC', file: 'Samsung_45W_PD_Adapter_2.jpg', old: '180,000', price: '145,000' },
+        { name: 'GALAXY WATCH', type: 'ACC', file: 'samsung-smart-watch-galaxy-watch.jpg', old: '950,000', price: '820,000' },
+        { name: 'BACK COVER', type: 'ACC', file: 'samsung-phone-back-cover-case.jpg', old: '65,000', price: '45,000' }
+    ];
+
+    let currentItems = [...allItems];
+    let currentIdx = 0;
+    const container = document.getElementById('metroContainer');
+    const thumbBox = document.getElementById('metroThumbs');
+    const waBtn = document.getElementById('waMainBtn');
+    const catLabel = document.getElementById('catLabel');
+
+    function filterCategory(cat) {
+        document.querySelectorAll('.cat-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if(btn.innerText.includes(cat) || (cat === 'ALL' && btn.innerText.includes('ALL'))) btn.classList.add('active');
+        });
+
+        currentItems = cat === 'ALL' ? [...allItems] : allItems.filter(i => i.type === cat);
+        currentIdx = 0;
+        catLabel.innerText = `BROWSING ${cat}`;
+        buildThumbs();
+        updateMetro();
+    }
+
+    function buildThumbs() {
+        thumbBox.innerHTML = '';
+        currentItems.forEach((item, i) => {
+            const tImg = document.createElement('img');
+            tImg.src = imgBase + item.file;
+            tImg.style = "min-width: 65px; height: 65px; object-fit: cover; border-radius: 10px; cursor: pointer; opacity: 0.5; border: 2px solid transparent; transition: 0.3s; background: #fff;";
+            tImg.onclick = () => { currentIdx = i; updateMetro(); };
+            thumbBox.appendChild(tImg);
+        });
+    }
+
+    function updateMetro() {
+        if(currentItems.length === 0) return;
+        container.innerHTML = ''; 
+        const showCount = Math.min(3, currentItems.length);
+        for (let i = 0; i < showCount; i++) {
+            const index = (currentIdx + i) % currentItems.length;
+            const item = currentItems[index];
+            const card = document.createElement('div');
+            card.style = "position: relative; height: 98%; width: 31%; background: #fff; border-radius: 14px; display: flex; flex-direction: column; align-items: center; border: 1px solid #d1d9e0; cursor: pointer; animation: fadeInUp 0.5s ease;";
+            card.innerHTML = `
+                <div style="position: absolute; top: 10px; right: 10px; background: #ff4d4d; color: white; font-size: 8px; font-weight: bold; padding: 3px 6px; border-radius: 5px;">SALE</div>
+                <img src="${imgBase + item.file}" style="width: 80%; height: 50%; object-fit: contain; margin-top: 30px;">
+                <div style="position: absolute; bottom: 0; width: 100%; background: #fff; padding: 12px 5px; text-align: center; border-top: 1px solid #e1e4e8;">
+                    <div style="font-size: 10px; font-weight: 700; color: #000; margin-bottom: 2px;">${item.name}</div>
+                    <div style="font-size: 9px; color: #888; text-decoration: line-through;">Shs ${item.old}</div>
+                    <div style="font-size: 11px; color: #28a745; font-weight: 800;">Shs ${item.price}</div>
+                </div>
+            `;
+            card.onclick = () => window.open(`https://wa.me/${whatsappNum}?text=Order: ${item.name} at Shs ${item.price}`, '_blank');
+            container.appendChild(card);
+        }
+        const allThumbs = thumbBox.getElementsByTagName('img');
+        for (let j = 0; j < allThumbs.length; j++) {
+            allThumbs[j].style.borderColor = (j === currentIdx) ? "#0056b3" : "transparent";
+            allThumbs[j].style.opacity = (j === currentIdx) ? "1" : "0.5";
+            if(j === currentIdx) allThumbs[j].scrollIntoView({behavior: "smooth", inline: "center"});
+        }
+        waBtn.href = `https://wa.me/${whatsappNum}?text=Hello, I'm interested in the ${currentItems[currentIdx].name}`;
+    }
+
+    const style = document.createElement('style');
+    style.innerHTML = `@keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }`;
+    document.head.appendChild(style);
+
+    filterCategory('ALL');
+    setInterval(() => { if(currentItems.length > 1) { currentIdx = (currentIdx + 1) % currentItems.length; updateMetro(); } }, 5000);
+</script>
 
 <!-- CATEGORIES -->
 <section class="categories reveal">
