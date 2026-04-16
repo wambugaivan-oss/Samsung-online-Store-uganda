@@ -1,20 +1,21 @@
----
-layout: default
-title: Samsung Store Blog
----
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Samsung Store Price Lists</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .btn { display: block; padding: 15px; margin-bottom: 10px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Official Price Lists & Stock</h1>
+    <p>Select a category to view wholesale prices and images:</p>
 
-<h1>Our Latest Inventory & Price Lists</h1>
+    <a href="/blog/2026/04/16/samsung-price-list.html" class="btn">📱 Samsung Smartphone Prices</a>
+    <a href="/blog/2026/04/16/google-pixel-prices.html" class="btn">💎 Google Pixel Prices</a>
+    <a href="/blog/2026/04/16/samsung-tv-price-list.html" class="btn">📺 Samsung TV Prices</a>
+    <a href="/blog/2026/04/16/premium-stock-showcase.html" class="btn">✨ Premium Tech Showcase</a>
+    <a href="/blog/2026/04/16/mobile-accessories-prices.html" class="btn">🔌 Accessories Prices</a>
 
-<p>Welcome to our official store updates. See our latest stock and wholesale prices below:</p>
-
-<ul style="list-style-type: none; padding-left: 0;">
-  {% for post in site.posts %}
-    <li style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-      <a href="{{ site.baseurl }}{{ post.url }}" style="font-size: 1.2rem; font-weight: bold; color: #007bff; text-decoration: none;">
-        {{ post.title }}
-      </a>
-      <br>
-      <small style="color: #666;">Updated on: {{ post.date | date: "%B %d, %Y" }}</small>
-    </li>
-  {% endfor %}
-</ul> 
+</body>
+</html>
