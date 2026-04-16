@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title: "Latest Samsung Price List"
+title: "Latest Samsung Price List in Uganda: S8 to S26 Ultra"
 date: 2026-04-16
 ---
 # Samsung Galaxy Price List - Kampala
