@@ -3,14 +3,18 @@ layout: default
 title: Samsung Store Blog
 ---
 
-<h1>Our Latest Updates</h1>
+<h1>Our Latest Inventory & Price Lists</h1>
 
-<ul>
+<p>Welcome to our official store updates. See our latest stock and wholesale prices below:</p>
+
+<ul style="list-style-type: none; padding-left: 0;">
   {% for post in site.posts %}
-    <li>
-      <strong><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></strong> 
+    <li style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+      <a href="{{ site.baseurl }}{{ post.url }}" style="font-size: 1.2rem; font-weight: bold; color: #007bff; text-decoration: none;">
+        {{ post.title }}
+      </a>
       <br>
-      <small>Posted on: {{ post.date | date: "%B %d, %Y" }}</small>
+      <small style="color: #666;">Updated on: {{ post.date | date: "%B %d, %Y" }}</small>
     </li>
   {% endfor %}
 </ul>
