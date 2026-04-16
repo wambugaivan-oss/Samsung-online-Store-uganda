@@ -3,12 +3,14 @@ layout: default
 title: Samsung Store Blog
 ---
 
-<h1>Welcome to our Store Blog</h1>
+<h1>Our Latest Updates</h1>
 
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %d, %Y" }}
+      <strong><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></strong> 
+      <br>
+      <small>Posted on: {{ post.date | date: "%B %d, %Y" }}</small>
     </li>
   {% endfor %}
 </ul>
