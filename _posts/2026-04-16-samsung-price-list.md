@@ -1,9 +1,9 @@
+
 ---
 layout: post
-title: "Latest Samsung Price List in Uganda: S8 to S26 Ultra"
+title: "Latest Samsung Price List"
 date: 2026-04-16
 ---
-
 # Samsung Galaxy Price List - Kampala
 
 We have a wide range of Samsung Galaxy devices available, from classic reliable models to the latest flagships. Both brand new and high-quality used options are in stock.
