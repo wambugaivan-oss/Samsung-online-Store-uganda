@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Samsung Uganda Blog
+title: Samsung Store Blog
 ---
 
 <h1>Welcome to our Store Blog</h1>
@@ -8,7 +8,7 @@ title: Samsung Uganda Blog
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string }}
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %d, %Y" }}
     </li>
   {% endfor %}
 </ul>
