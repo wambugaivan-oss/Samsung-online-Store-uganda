@@ -1,3 +1,69 @@
+<div id="carousel-tab" style="position: fixed; right: -250px; top: 30%; z-index: 9999; display: flex; align-items: center; transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1); filter: drop-shadow(-5px 5px 15px rgba(0,0,0,0.3));">
+    
+    <div onclick="toggleCarousel()" style="background: #1428A0; color: white; width: 40px; height: 100px; border-radius: 15px 0 0 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; border: 1.5px solid #fff; border-right: none;">
+        <span style="font-size: 18px; margin-bottom: 5px;">📱</span>
+        <span style="font-size: 8px; font-weight: bold; transform: rotate(-90deg); white-space: nowrap; letter-spacing: 2px;">STOCK</span>
+    </div>
+
+    <div style="background: #ffffff; border: 2.5px solid #1428A0; border-right: none; padding: 15px; width: 230px; border-radius: 0 0 0 20px; text-align: center;">
+        
+        <div style="position: relative; height: 120px; overflow: hidden; border-radius: 10px; background: #f8f9fa; margin-bottom: 10px; border: 1px solid #eee;">
+            <img id="slide-img" src="https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/samsung-galaxy-s26-new-stock-b118.jpg" style="width: 100%; height: 100%; object-fit: contain; transition: opacity 0.5s ease-in-out;">
+            <div id="slide-label" style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: #fff; font-size: 10px; padding: 4px 0; font-weight: bold;">S26 ULTRA</div>
+        </div>
+
+        <div style="background: #000; color: #fff; font-size: 11px; padding: 5px; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
+            <span id="slide-price">UGX 6,800,000</span>
+        </div>
+        
+        <a href="https://samsunguganda.store/blog/" style="display: block; background: #1428A0; color: #fff; padding: 10px; border-radius: 10px; text-decoration: none; font-size: 11px; font-weight: bold; text-transform: uppercase;">Open Full Inventory</a>
+    </div>
+</div>
+
+<script>
+    const tab = document.getElementById('carousel-tab');
+    const img = document.getElementById('slide-img');
+    const label = document.getElementById('slide-label');
+    const price = document.getElementById('slide-price');
+
+    // Your Product Data
+    const products = [
+        { name: "S26 ULTRA", price: "UGX 6,800,000", img: "https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/samsung-galaxy-s26-new-stock-b118.jpg" },
+        { name: "S24 ULTRA", price: "UGX 4,100,000", img: "https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/S24_Ultra.jpg" },
+        { name: "S23 ULTRA", price: "UGX 3,200,000", img: "https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/samsung-s23-ultra-kampala-priice.jpg" }
+    ];
+
+    let current = 0;
+
+    // Change slide every 2.5 seconds
+    setInterval(() => {
+        current = (current + 1) % products.length;
+        img.style.opacity = 0;
+        setTimeout(() => {
+            img.src = products[current].img;
+            label.innerText = products[current].name;
+            price.innerText = products[current].price;
+            img.style.opacity = 1;
+        }, 500);
+    }, 2500);
+
+    function toggleCarousel() {
+        if (tab.style.right === '0px') {
+            tab.style.right = '-250px';
+        } else {
+            tab.style.right = '0px';
+            // Auto-hide after 10 seconds of being open
+            setTimeout(() => { tab.style.right = '-250px'; }, 10000);
+        }
+    }
+
+    // Peek once on load
+    setTimeout(() => {
+        tab.style.right = '0px';
+        setTimeout(() => { tab.style.right = '-250px'; }, 6000);
+    }, 2000);
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head><title>samsung store uganda | shop b118 basement | samsung & iphone</title>
