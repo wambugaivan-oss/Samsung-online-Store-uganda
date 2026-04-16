@@ -1,7 +1,2 @@
 title: Samsung Store Uganda
-description: Best phones and repairs in Kampala.
 theme: minima
-remote_theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
