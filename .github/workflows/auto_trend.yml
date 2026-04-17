@@ -2,8 +2,7 @@
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          # This verifies where we are
-          pwd
-          ls -R .github/
-          # This runs the script specifically
+          echo "Listing all files in the current folder:"
+          ls -R
+          echo "Attempting to run script:"
           python .github/scripts/generate_post.py
