@@ -1,29 +1,29 @@
-import os
-import json
-import sys
-import traceback
+name: Daily Uganda Tech Trends
+on:
+  workflow_dispatch:
 
-print("--- STARTING DEBUG ---")
-
-try:
-    # 1. Check if API Key is visible
-    key = os.environ.get("GEMINI_API_KEY")
-    if not key:
-        print("ERROR: GEMINI_API_KEY is empty or missing.")
-        sys.exit(1)
-    print("API Key found.")
-
-    # 2. Check if products.json exists
-    if not os.path.exists('products.json'):
-        print("ERROR: products.json file not found in root folder.")
-        sys.exit(1)
-    
-    # 3. Attempt to load JSON
-    with open('products.json', 'r') as f:
-        data = json.load(f)
-        print("JSON loaded successfully.")
-
-except Exception:
-    print("--- CRITICAL FAILURE ---")
-    traceback.print_exc() # This prints the exact error line
-    sys.exit(2)
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install google-generativeai
+      - name: Run Trend Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python generate_post.py
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add products.json
+          git commit -m "Update products from AI"
+          git push
