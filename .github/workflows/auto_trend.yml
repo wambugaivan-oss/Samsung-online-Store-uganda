@@ -9,10 +9,16 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
-      - name: List all files in the repository
-        run: ls -R
+      - name: Install Dependencies
+        run: pip install google-generativeai requests
       - name: Run Trend Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python .github/scripts/generate_post.py
+      - name: Commit and Push
         run: |
-          python .github/scripts/generate_post.py
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add products.json
+          git commit -m "Update products from AI"
+          git push
