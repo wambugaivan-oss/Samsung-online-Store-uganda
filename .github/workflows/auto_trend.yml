@@ -1,8 +1,18 @@
+name: Daily Uganda Tech Trends
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: List all files in the repository
+        run: ls -R
       - name: Run Trend Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          echo "Listing all files in the current folder:"
-          ls -R
-          echo "Attempting to run script:"
           python .github/scripts/generate_post.py
