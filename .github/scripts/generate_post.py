@@ -1,21 +1,21 @@
-import os
-import json
-import sys
+name: Daily Uganda Tech Trends
+on:
+  workflow_dispatch:
 
-# Print to log so we know it started
-print("Script started successfully!")
-
-# Check if API Key exists
-if "GEMINI_API_KEY" not in os.environ:
-    print("Error: GEMINI_API_KEY not found!")
-    sys.exit(1)
-
-try:
-    # Minimal test to see if it crashes
-    print("Attempting to load products.json...")
-    with open('products.json', 'r') as f:
-        data = json.load(f)
-    print(f"Successfully loaded {len(data)} items.")
-except Exception as e:
-    print(f"CRASHED: {e}")
-    sys.exit(1)
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Run Debug Script
+        run: |
+          echo "Checking folder structure:"
+          ls -R
+          echo "Running Python version:"
+          python --version
+          echo "Attempting to run script:"
+          python generate_post.py || echo "FAILED WITH EXIT CODE $?"
