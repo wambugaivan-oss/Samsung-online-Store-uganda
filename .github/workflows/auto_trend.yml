@@ -27,3 +27,9 @@ jobs:
           git add products.json
           git commit -m "Update products from AI"
           git push
+      - name: Debug - List Files
+        run: ls -R
+      - name: Run Trend Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python generate_post.py
