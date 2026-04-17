@@ -1,29 +1,7 @@
-name: Daily Uganda Tech Trends
-on:
-  schedule:
-    - cron: '0 9 * * *' # Runs at 9:00 AM every day
-  workflow_dispatch: # Allows you to run it manually
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - name: Install Dependencies
-        run: pip install google-generativeai requests
       - name: Run Trend Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          # This command moves the computer into the right folder before running
+          cd $GITHUB_WORKSPACE
           python .github/scripts/generate_post.py
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "Store Bot"
-          git config --global user.email "bot@samsunguganda.store"
-          git add .
-          git commit -m "AI: Added today's trending product in Uganda"
-          git push
