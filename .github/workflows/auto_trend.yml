@@ -2,6 +2,8 @@
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          # This command moves the computer into the right folder before running
-          cd $GITHUB_WORKSPACE
+          # This verifies where we are
+          pwd
+          ls -R .github/
+          # This runs the script specifically
           python .github/scripts/generate_post.py
