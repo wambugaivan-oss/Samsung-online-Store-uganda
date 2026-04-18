@@ -1,88 +1,39 @@
-<div id="carousel-tab" style="position: fixed; right: -250px; top: 30%; z-index: 9999; display: flex; align-items: center; transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1); filter: drop-shadow(-5px 5px 15px rgba(0,0,0,0.3));">
-    
-    <div onclick="toggleCarousel()" style="background: #1428A0; color: white; width: 40px; height: 100px; border-radius: 15px 0 0 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; border: 1.5px solid #fff; border-right: none;">
-        <span style="font-size: 18px; margin-bottom: 5px;">📱</span>
-        <span style="font-size: 8px; font-weight: bold; transform: rotate(-90deg); white-space: nowrap; letter-spacing: 2px;">STOCK</span>
-    </div>
-
-    <div style="background: #ffffff; border: 2.5px solid #1428A0; border-right: none; padding: 15px; width: 230px; border-radius: 0 0 0 20px; text-align: center;">
-        
-        <div style="position: relative; height: 120px; overflow: hidden; border-radius: 10px; background: #f8f9fa; margin-bottom: 10px; border: 1px solid #eee;">
-            <img id="slide-img" src="https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/samsung-galaxy-s26-new-stock-b118.jpg" style="width: 100%; height: 100%; object-fit: contain; transition: opacity 0.5s ease-in-out;">
-            <div id="slide-label" style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: #fff; font-size: 10px; padding: 4px 0; font-weight: bold;">S26 ULTRA</div>
-        </div>
-
-        <div style="background: #000; color: #fff; font-size: 11px; padding: 5px; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
-            <span id="slide-price">UGX 6,800,000</span>
-        </div>
-        
-        <a href="https://samsunguganda.store/blog/" style="display: block; background: #1428A0; color: #fff; padding: 10px; border-radius: 10px; text-decoration: none; font-size: 11px; font-weight: bold; text-transform: uppercase;">Open Full Inventory</a>
-    </div>
-</div>
-
-<script>
-    const tab = document.getElementById('carousel-tab');
-    const img = document.getElementById('slide-img');
-    const label = document.getElementById('slide-label');
-    const price = document.getElementById('slide-price');
-
-    // Your Product Data
-    const products = [
-        { name: "S26 ULTRA", price: "UGX 6,800,000", img: "https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/samsung-galaxy-s26-new-stock-b118.jpg" },
-        { name: "S24 ULTRA", price: "UGX 4,100,000", img: "https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/S24_Ultra.jpg" },
-        { name: "S23 ULTRA", price: "UGX 3,200,000", img: "https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/samsung-s23-ultra-kampala-priice.jpg" }
-    ];
-
-    let current = 0;
-
-    // Change slide every 2.5 seconds
-    setInterval(() => {
-        current = (current + 1) % products.length;
-        img.style.opacity = 0;
-        setTimeout(() => {
-            img.src = products[current].img;
-            label.innerText = products[current].name;
-            price.innerText = products[current].price;
-            img.style.opacity = 1;
-        }, 500);
-    }, 2500);
-
-    function toggleCarousel() {
-        if (tab.style.right === '0px') {
-            tab.style.right = '-250px';
-        } else {
-            tab.style.right = '0px';
-            // Auto-hide after 10 seconds of being open
-            setTimeout(() => { tab.style.right = '-250px'; }, 10000);
-        }
-    }
-
-    // Peek once on load
-    setTimeout(() => {
-        tab.style.right = '0px';
-        setTimeout(() => { tab.style.right = '-250px'; }, 6000);
-    }, 2000);
-</script>
-
 <!DOCTYPE html>
 <html lang="en">
-<head><title>samsung store uganda | shop b118 basement | samsung & iphone</title>
-<meta name="description" content="apple store uganda. wholesale and retail of samsung galaxy, iphone, and laptops. specialized in phone repairs, swaps, and genuine accessories. visit us at shop b118, basement, kampala.">
-<meta name="keywords" content="samsung uganda, iphone kampala, phone repair uganda, phone swaps kampala, apple store uganda, samsung galaxy s24 uganda, cheap iphones kampala, shop b118 basement">
-<link rel="manifest" href="/manifest.json">
-<meta property="og:title" content="apple store uganda - phones & repairs">
-<meta property="og:description" content="samsung, iphone, swaps and repairs. shop b118 basement.">
-<meta property="og:url" content="https://www.samsunguganda.store">
-<meta property="og:type" content="website">
-
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Samsung Store Uganda – Galaxy Phones, Repairs, Laptops & Accessories | Kampala</title>
+<meta name="description" content="Samsung Store Uganda. Buy Galaxy S25 Ultra, A56, Z Fold 6, laptops, TVs & accessories in Kampala. Expert Samsung repairs — screen, battery, software. Call 0756 922 058. William Street. We Sell, We Buy, We Fix.">
+<meta name="keywords" content="Samsung Store Uganda, Samsung phones Kampala, Galaxy S25 Uganda, Samsung repair Kampala, screen replacement Uganda, Galaxy Book Uganda, sell phone Uganda, buy used phone Kampala, Samsung accessories Uganda">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.samsunguganda.store/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Samsung Store Uganda – Galaxy Phones, Repairs & Accessories | Kampala">
+<meta property="og:description" content="Uganda's Samsung specialists. Galaxy phones, laptops, TVs, accessories and expert repairs. William Street, Kampala. Call 0756 922 058.">
+<meta property="og:url" content="https://www.samsunguganda.store">
+<meta property="og:site_name" content="Samsung Store Uganda">
+<meta property="og:locale" content="en_UG">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Samsung Store Uganda – Galaxy Phones & Repairs Kampala">
+<meta name="twitter:description" content="Uganda's Samsung specialists. Best prices on Galaxy phones, laptops, TVs and accessories. Expert repairs. William Street, Kampala.">
+<meta name="twitter:site" content="@Samsungiphonestoreug">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon.svg">
-<title>Samsung Store Uganda – Phones, Repairs, Laptops & Accessories | Kampala</title>
-<meta name="description" content="Samsung Store Uganda. Buy Samsung phones, laptops, TVs & accessories in Kampala. Expert Samsung repairs, screen replacement, software fixes. Call 0756922058. William Street. We Sell, We Buy, We Fix.">
-<meta name="keywords" content="Samsung Store Uganda, Samsung repair Kampala, Samsung screen replacement Uganda, Galaxy S25 Uganda, Samsung software fix Uganda, Samsung laptop Uganda, sell phone Uganda, buy used phone Kampala">
+<link rel="manifest" href="/manifest.json">
+
+<!-- Fonts with display:swap for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Unbounded:wght@200;400;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Unbounded:wght@200;400;700;900&display=swap&font-display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #f0ede8;
@@ -2363,21 +2314,351 @@ footer {
   .android-bar-cta { width: 100%; }
   .android-cta-wa { flex: 1; text-align: center; display: block; }
 }
-</style>
-</head>
-    <script type="application/ld+json">
+
+/* ── PREMIUM UPGRADES ── */
+
+/* Loading screen */
+#page-loader {
+  position: fixed; inset: 0; z-index: 99999;
+  background: var(--dark);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 20px;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#page-loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-mark {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 6px; text-transform: uppercase;
+  color: var(--white);
+}
+.loader-mark span { color: var(--blue); }
+.loader-bar {
+  width: 120px; height: 2px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+.loader-bar-fill {
+  height: 100%; width: 0%;
+  background: var(--blue);
+  animation: loaderFill 1.2s ease forwards;
+}
+@keyframes loaderFill { to { width: 100%; } }
+
+/* Skip link accessibility */
+.skip-link {
+  position: absolute; top: -100px; left: 6%;
+  background: var(--blue); color: white;
+  padding: 12px 20px;
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  text-decoration: none; z-index: 99999;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 8px; }
+
+/* Smooth section transitions */
+section { will-change: transform; }
+
+/* Enhanced hover on product items */
+.prod-item {
+  position: relative;
+}
+.prod-item::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--blue);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+.prod-item:hover::after { transform: scaleY(1); }
+
+/* Sticky progress bar */
+.scroll-progress {
+  position: fixed; top: 0; left: 0;
+  height: 3px; background: var(--blue);
+  z-index: 99999; width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ── UPGRADED CAROUSEL TAB ── */
+#carousel-tab {
+  position: fixed !important;
+  right: -260px !important;
+  top: 30% !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: right 0.5s cubic-bezier(0.19,1,0.22,1) !important;
+  filter: none !important;
+}
+.carousel-toggle {
+  background: var(--blue);
+  color: white;
+  width: 36px; height: 90px;
+  border-radius: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.carousel-toggle-icon { font-size: 1rem; margin-bottom: 4px; }
+.carousel-toggle-label {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.45rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  color: white;
+}
+.carousel-panel {
+  background: var(--dark);
+  border: 1px solid #1a1a1a;
+  border-right: none;
+  padding: 16px;
+  width: 220px;
+}
+.carousel-img-wrap {
+  position: relative;
+  height: 130px;
+  overflow: hidden;
+  background: #111;
+  margin-bottom: 10px;
+  border: 1px solid #222;
+  display: flex; align-items: center; justify-content: center;
+}
+.carousel-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  transition: opacity 0.5s ease;
+}
+.carousel-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 8px;
+}
+.carousel-price-tag {
+  background: var(--blue);
+  color: white;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 8px 12px;
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.carousel-cta {
+  display: block;
+  background: white;
+  color: var(--dark);
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.52rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+}
+.carousel-cta:hover { background: var(--blue); color: white; }
+
+/* ── UPGRADED METRO STORE ── */
+.metro-section {
+  padding: 60px 6%;
+  background: var(--bg2);
+  border-top: 1px solid #d4d0ca;
+}
+.metro-eyebrow {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 5px; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.metro-inner {
+  display: flex; flex-wrap: wrap; gap: 2px;
+}
+.metro-stage {
+  flex: 2; min-width: 300px; height: 340px;
+  background: white;
+  border: 1px solid #d4d0ca;
+  overflow: hidden;
+  position: relative;
+}
+.metro-cards {
+  display: flex; height: 100%;
+  transition: none;
+}
+.metro-card {
+  flex: 1; min-width: 33.33%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-end;
+  padding: 16px 12px 14px;
+  border-right: 1px solid #d4d0ca;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+  background: white;
+}
+.metro-card:last-child { border-right: none; }
+.metro-card:hover { background: #f8f6f2; }
+.metro-card-badge {
+  position: absolute; top: 10px; left: 10px;
+  background: var(--red);
+  color: white;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.48rem; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 3px 7px;
+}
+.metro-card img {
+  width: 85%; max-height: 170px;
+  object-fit: contain;
+  margin-bottom: auto; margin-top: 32px;
+}
+.metro-card-body {
+  width: 100%;
+  border-top: 1px solid #e8e4de;
+  padding-top: 10px;
+  text-align: center;
+}
+.metro-card-name {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.58rem; font-weight: 900;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--dark); margin-bottom: 3px;
+}
+.metro-card-old {
+  font-size: 0.62rem; color: var(--muted);
+  text-decoration: line-through;
+}
+.metro-card-price {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.72rem; font-weight: 900;
+  color: #1a8a3c;
+}
+.metro-info {
+  flex: 1; min-width: 240px;
+  background: var(--dark);
+  border: 1px solid #1a1a1a;
+  padding: 32px 28px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.metro-info-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(18px,2.5vw,28px);
+  font-weight: 900; letter-spacing: -1px;
+  text-transform: uppercase; color: white;
+  line-height: 1; margin-bottom: 6px;
+}
+.metro-info-title span { color: var(--blue); }
+.metro-info-cat {
+  font-size: 0.6rem; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--blue);
+  font-weight: 700; margin-bottom: 20px;
+}
+.metro-info-address {
+  font-size: 0.75rem; color: rgba(255,255,255,0.35);
+  margin-bottom: 20px; line-height: 1.6;
+}
+.metro-info-list {
+  list-style: none; padding: 0;
+  margin-bottom: 24px;
+  border-top: 1px solid #1a1a1a;
+  padding-top: 16px;
+}
+.metro-info-list li {
+  font-size: 0.72rem; color: rgba(255,255,255,0.55);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.metro-info-list li:last-child { border-bottom: none; }
+.metro-wa-btn {
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px;
+  background: var(--blue); color: white;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.6rem; font-weight: 900;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 14px; text-decoration: none;
+  transition: background 0.2s;
+}
+.metro-wa-btn:hover { background: #0e1f80; }
+.metro-cat-bar {
+  display: flex; gap: 2px;
+  margin-bottom: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.metro-cat-bar::-webkit-scrollbar { display: none; }
+.metro-cat-btn {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.52rem; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 8px 14px;
+  background: white;
+  border: 1px solid #d4d0ca;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.metro-cat-btn:hover, .metro-cat-btn.active {
+  background: var(--dark); color: white; border-color: var(--dark);
+}
+.metro-thumbs {
+  display: flex; gap: 2px;
+  overflow-x: auto; padding: 2px 0;
+  margin-top: 2px;
+  scrollbar-width: none;
+}
+.metro-thumbs::-webkit-scrollbar { display: none; }
+.metro-thumb {
+  min-width: 70px; height: 70px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.4;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  background: white;
+}
+.metro-thumb:hover { opacity: 0.7; }
+.metro-thumb.active { border-color: var(--blue); opacity: 1; }
+
+/* Focus styles for accessibility */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+</style><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness","Store"],
       "@id": "https://www.samsunguganda.store/#business",
       "name": "Samsung Store Uganda",
       "alternateName": "Shop B118 Samsung Uganda",
       "description": "Samsung phones, iPhones, laptops, TVs and accessories in Kampala. Expert repairs, screen replacement, software fixes, phone swaps and wholesale deals.",
       "url": "https://www.samsunguganda.store",
       "telephone": "+256756922058",
-      "image": "https://www.samsunguganda.store/samsung-galaxy-s26-new-stock-b118.jpg",
+      "image": "https://www.samsunguganda.store/assets/samsung-galaxy-s26-new-stock-b118.jpg",
       "logo": "https://www.samsunguganda.store/favicon.svg",
       "priceRange": "UGX 150,000 – UGX 7,500,000",
       "currenciesAccepted": "UGX",
@@ -2471,7 +2752,15 @@ footer {
           { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to buy Samsung Galaxy Book4 Pro", "itemOffered": { "@type": "Product", "name": "Samsung Galaxy Book4 Pro", "brand": { "@type": "Brand", "name": "Samsung" } }, "price": "4200000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
           { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to buy Samsung Galaxy Book4", "itemOffered": { "@type": "Product", "name": "Samsung Galaxy Book4", "brand": { "@type": "Brand", "name": "Samsung" } }, "price": "2800000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
           { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to buy Samsung 65 inch QLED TV", "itemOffered": { "@type": "Product", "name": "Samsung 65 inch QLED Q70 TV", "brand": { "@type": "Brand", "name": "Samsung" } }, "price": "3800000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
-          { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to buy Samsung 43 inch Crystal TV", "itemOffered": { "@type": "Product", "name": "Samsung 43 inch Crystal 4K TV", "brand": { "@type": "Brand", "name": "Samsung" } }, "price": "1600000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" }
+          { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to buy Samsung 43 inch Crystal TV", "itemOffered": { "@type": "Product", "name": "Samsung 43 inch Crystal 4K TV", "brand": { "@type": "Brand", "name": "Samsung" } }, "price": "1600000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to order Google Pixel 10 Pro", "itemOffered": { "@type": "Product", "name": "Google Pixel 10 Pro", "brand": { "@type": "Brand", "name": "Google" } }, "price": "5800000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to order Google Pixel 9 Pro", "itemOffered": { "@type": "Product", "name": "Google Pixel 9 Pro", "brand": { "@type": "Brand", "name": "Google" } }, "price": "4950000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to order Google Pixel 8 Pro", "itemOffered": { "@type": "Product", "name": "Google Pixel 8 Pro", "brand": { "@type": "Brand", "name": "Google" } }, "price": "3450000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to order Google Pixel 8a", "itemOffered": { "@type": "Product", "name": "Google Pixel 8a", "brand": { "@type": "Brand", "name": "Google" } }, "price": "2200000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to order Google Pixel 7 Pro", "itemOffered": { "@type": "Product", "name": "Google Pixel 7 Pro", "brand": { "@type": "Brand", "name": "Google" } }, "price": "2150000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to order Google Pixel 7", "itemOffered": { "@type": "Product", "name": "Google Pixel 7", "brand": { "@type": "Brand", "name": "Google" } }, "price": "1600000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to order Google Pixel 7a", "itemOffered": { "@type": "Product", "name": "Google Pixel 7a", "brand": { "@type": "Brand", "name": "Google" } }, "price": "1450000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "url": "https://wa.me/256756922058?text=I want to order Google Pixel 6 Pro", "itemOffered": { "@type": "Product", "name": "Google Pixel 6 Pro", "brand": { "@type": "Brand", "name": "Google" } }, "price": "1550000", "priceCurrency": "UGX", "availability": "https://schema.org/InStock" }
         ]
       }
     },
@@ -2490,142 +2779,37 @@ footer {
   ]
 }
 </script>
+</head>
 <body>
 
+<!-- Skip link for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- CART TOAST -->
-<div class="cart-toast" id="cartToast">✓ Added to Cart</div>
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Page scroll progress"></div>
 
-<!-- CART OVERLAY -->
-<div class="cart-overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()">
-  <div class="cart-panel">
-    <div class="cart-panel-header">
-      <div class="cart-panel-title">🛒 Your Cart</div>
-      <button class="cart-close" onclick="closeCart()">✕</button>
-    </div>
-    <div class="cart-items" id="cartItems">
-      <div class="cart-empty">
-        <span style="font-size:2rem">🛒</span>
-        <span>Your cart is empty</span>
-      </div>
-    </div>
-    <div class="cart-footer" id="cartFooter" style="display:none;">
-      <div class="cart-subtotal">
-        <span class="cart-subtotal-label">Total</span>
-        <span class="cart-subtotal-amount" id="cartTotal">UGX 0</span>
-      </div>
-      <button class="cart-checkout-btn" onclick="openCheckout()">Proceed to Checkout →</button>
-      <button class="cart-wa-btn" onclick="cartOrderViaWA()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Order via WhatsApp
-      </button>
-    </div>
-  </div>
+<!-- Loading screen -->
+<div id="page-loader" role="status" aria-label="Loading Samsung Store Uganda">
+  <div class="loader-mark">SAMSUNG<span>STORE</span> · UG</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
 
-<!-- CHECKOUT MODAL -->
-<div class="checkout-overlay" id="checkoutOverlay">
-  <div class="checkout-modal">
-    <div class="checkout-header">
-      <div class="checkout-title">Checkout</div>
-      <button class="cart-close" onclick="closeCheckout()">✕</button>
+<!-- CAROUSEL STOCK TAB -->
+<div id="carousel-tab" role="complementary" aria-label="Live stock preview">
+  <button class="carousel-toggle" onclick="toggleCarousel()" aria-label="Toggle stock preview">
+    <span class="carousel-toggle-icon">📱</span>
+    <span class="carousel-toggle-label">Stock</span>
+  </button>
+  <div class="carousel-panel">
+    <div class="carousel-img-wrap">
+      <img id="slide-img" src="https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/assets/samsung-galaxy-s26-new-stock-b118.jpg" alt="Samsung S26 Ultra price Kampala Uganda" loading="lazy">
+      <div class="carousel-label" id="slide-label">S26 ULTRA</div>
     </div>
-    <div class="checkout-body" id="checkoutBody">
-      <!-- Dynamically populated -->
-    </div>
+    <div class="carousel-price-tag" id="slide-price">UGX 6,800,000</div>
+    <a href="https://samsunguganda.store/blog/" class="carousel-cta">Open Full Inventory →</a>
   </div>
 </div>
-
-<!-- CATEGORY PAGE OVERLAYS -->
-<!-- Samsung Phones Page -->
-<div class="cat-page-overlay" id="page-samsung">
-  <div class="cat-page-topbar">
-    <button class="cat-page-back" onclick="closeCatPage('page-samsung')">← Back</button>
-    <div class="cat-page-title-bar">Samsung Store Uganda</div>
-  </div>
-  <div class="cat-page-content">
-    <div class="cat-page-headline">Samsung<em>Galaxy</em></div>
-    <div class="cat-page-sub">All Samsung phones — New & UK Used · Tap to add to cart</div>
-    <input type="text" class="prod-search" style="max-width:100%;margin-bottom:20px;" placeholder="🔍 Search Samsung phones..." oninput="searchCatPage(this, 'samsung-grid')">
-    <div class="cat-page-filters">
-      <button class="filter-btn active" onclick="filterCatPage(this,'page-samsung','all')">All</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-samsung','s-series')">S Series</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-samsung','a-series')">A Series</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-samsung','foldable')">Foldable</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-samsung','note')">Note Series</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-samsung','pixel')">Google Pixel</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-samsung','other')">Other Android</button>
-    </div>
-    <div class="cat-prod-grid" id="samsung-grid"></div>
-  </div>
-</div>
-
-<!-- TVs Page -->
-<div class="cat-page-overlay" id="page-tvs">
-  <div class="cat-page-topbar">
-    <button class="cat-page-back" onclick="closeCatPage('page-tvs')">← Back</button>
-    <div class="cat-page-title-bar">Samsung Store Uganda</div>
-  </div>
-  <div class="cat-page-content">
-    <div class="cat-page-headline">Samsung<em>Smart TVs</em></div>
-    <div class="cat-page-sub">QLED · Crystal · The Frame · Neo QLED · All sizes</div>
-    <input type="text" class="prod-search" style="max-width:100%;margin-bottom:20px;" placeholder="🔍 Search TVs..." oninput="searchCatPage(this, 'tvs-grid')">
-    <div class="cat-page-filters">
-      <button class="filter-btn active" onclick="filterCatPage(this,'page-tvs','all')">All Sizes</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-tvs','32-43')">32–43"</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-tvs','50-55')">50–55"</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-tvs','65-75')">65–75"</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-tvs','85plus')">85"+</button>
-    </div>
-    <div class="cat-prod-grid" id="tvs-grid"></div>
-  </div>
-</div>
-
-<!-- Accessories Page -->
-<div class="cat-page-overlay" id="page-accessories">
-  <div class="cat-page-topbar">
-    <button class="cat-page-back" onclick="closeCatPage('page-accessories')">← Back</button>
-    <div class="cat-page-title-bar">Samsung Store Uganda</div>
-  </div>
-  <div class="cat-page-content">
-    <div class="cat-page-headline">Samsung<em>Accessories</em></div>
-    <div class="cat-page-sub">Chargers · Earbuds · Cases · Screen Guards · Cables</div>
-    <input type="text" class="prod-search" style="max-width:100%;margin-bottom:20px;" placeholder="🔍 Search accessories..." oninput="searchCatPage(this, 'accessories-grid')">
-    <div class="cat-page-filters">
-      <button class="filter-btn active" onclick="filterCatPage(this,'page-accessories','all')">All</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-accessories','audio')">Audio</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-accessories','charging')">Charging</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-accessories','protection')">Protection</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-accessories','wearables')">Wearables</button>
-    </div>
-    <div class="cat-prod-grid" id="accessories-grid"></div>
-  </div>
-</div>
-
-<!-- Laptops Page -->
-<div class="cat-page-overlay" id="page-laptops">
-  <div class="cat-page-topbar">
-    <button class="cat-page-back" onclick="closeCatPage('page-laptops')">← Back</button>
-    <div class="cat-page-title-bar">Samsung Store Uganda</div>
-  </div>
-  <div class="cat-page-content">
-    <div class="cat-page-headline">Laptops &<em>Tablets</em></div>
-    <div class="cat-page-sub">Galaxy Book · HP · Dell · Lenovo · Galaxy Tab</div>
-    <input type="text" class="prod-search" style="max-width:100%;margin-bottom:20px;" placeholder="🔍 Search laptops & tablets..." oninput="searchCatPage(this, 'laptops-grid')">
-    <div class="cat-page-filters">
-      <button class="filter-btn active" onclick="filterCatPage(this,'page-laptops','all')">All</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-laptops','galaxy-book')">Galaxy Book</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-laptops','hp')">HP</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-laptops','dell')">Dell</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-laptops','lenovo')">Lenovo</button>
-      <button class="filter-btn" onclick="filterCatPage(this,'page-laptops','tablets')">Tablets</button>
-    </div>
-    <div class="cat-prod-grid" id="laptops-grid"></div>
-  </div>
-</div>
-
-<div class="cursor" id="cursor"></div>
-
+<main id="main-content">
 <!-- SLOGAN BAR -->
 <div class="slogan-bar">
   <div class="slogan-bar-inner">
@@ -2645,7 +2829,7 @@ footer {
 </div>
 
 <!-- NAV -->
-<nav id="mainNav">
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
   <div class="nav-mark">SAMSUNG<span>STORE</span> · UG</div>
   <div class="nav-right">
     <a href="#phones" onclick="event.preventDefault();openCatPage('page-samsung')">Phones</a>
@@ -2800,24 +2984,37 @@ footer {
 </style>
 
 <script>
-    const imgBase = "https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/";
+    const imgBase = "https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/assets/";
     const whatsappNum = "256756922058"; 
     
     const allItems = [
-        // --- RESTORED SAMSUNG PHONES ---
+        // --- SAMSUNG PHONES ---
+        { name: 'S25 ULTRA', type: 'SAMSUNG', file: 'samsung-galaxy-s25-ultra-brand-new.jpg.jpg', old: '5,800,000', price: '4,950,000' },
         { name: 'S24 ULTRA', type: 'SAMSUNG', file: 'samsung-galaxy-s24-ultra-swap-kampala.jpga0b.jpg', old: '4,800,000', price: '4,450,000' },
         { name: 'S23 ULTRA', type: 'SAMSUNG', file: 'samsung-s23-ultra-kampala-priice.jpg', old: '3,500,000', price: '3,150,000' },
         { name: 'S21 ULTRA', type: 'SAMSUNG', file: 'samsung-s21-ultra-used-phones-uganda.jpg', old: '1,900,000', price: '1,650,000' },
+        { name: 'Z FOLD 7', type: 'SAMSUNG', file: 'samsung-galaxy-z-fold-7-latest-foldable-phone.jpg', old: '12,000,000', price: '9,800,000' },
         { name: 'Z FOLD 6', type: 'SAMSUNG', file: 'samsung-galaxy-z-fold-6-wholesale-b118.jpg.jpg', old: '6,500,000', price: '5,900,000' },
+        { name: 'Z FOLD 5', type: 'SAMSUNG', file: 'samsung-galaxy-z-fold-5-smartphone.jpg.jpg', old: '7,500,000', price: '6,200,000' },
+        { name: 'Z FOLD 4', type: 'SAMSUNG', file: 'samsung-galaxy-z-fold-4-brand-new.jpg.jpg', old: '6,000,000', price: '5,000,000' },
+        { name: 'Z FLIP 7', type: 'SAMSUNG', file: 'samsung-galaxy-z-flip-7-brand-new.jpg', old: '7,000,000', price: '5,800,000' },
+        { name: 'Z FLIP 6', type: 'SAMSUNG', file: 'samsung-galaxy-z-flip-6-brand-new.jpg.jpg', old: '5,800,000', price: '4,800,000' },
+        { name: 'Z FLIP 5', type: 'SAMSUNG', file: 'samsung-galaxy-z-flip-5-brand-new.jpg.jpg', old: '4,500,000', price: '3,800,000' },
+        { name: 'Z FLIP 4', type: 'SAMSUNG', file: 'samsung-galaxy-z-flip-4-brand-new.jpg.jpg', old: '2,800,000', price: '2,500,000' },
+        { name: 'A56 5G', type: 'SAMSUNG', file: 'samsung-galaxy-a56-5g-brand-new-smartphone.jpg', old: '2,000,000', price: '1,650,000' },
+        { name: 'A16 5G', type: 'SAMSUNG', file: 'samsung-galaxy-a16-5g-smartphone.jpg', old: '950,000', price: '750,000' },
         { name: 'S22 ULTRA', type: 'SAMSUNG', file: 'samsung-galaxy-s22-ultra-b118-basement.jpg', old: '2,400,000', price: '2,150,000' },
         { name: 'S20 ULTRA', type: 'SAMSUNG', file: 'samsung-galaxy-s20-ultra-wholesale.jpg', old: '1,500,000', price: '1,250,000' },
 
         // --- PIXEL PHONES ---
-        { name: 'PIXEL 9 PRO', type: 'NEW', file: 'Pixel_9_Pro_Group.jpg.jpg', old: '5,500,000', price: '4,950,000' },
-        { name: 'PIXEL 8 PRO', type: 'NEW', file: 'Pixel_8_Pro.jpg', old: '3,800,000', price: '3,450,000' },
-        { name: 'PIXEL 7 PRO', type: 'NEW', file: 'Pixel_7_Pro.jpg', old: '2,400,000', price: '2,150,000' },
-        { name: 'PIXEL 7a', type: 'NEW', file: 'Pixel_7a.jpg.jpg', old: '1,750,000', price: '1,450,000' },
-        { name: 'PIXEL 6 PRO', type: 'NEW', file: 'Pixel_6_Pro.jpg.jpg', old: '1,800,000', price: '1,550,000' },
+        { name: 'PIXEL 10 PRO', type: 'NEW', file: 'google-pixel-10-pro-black-color.jpg', old: '6,500,000', price: '5,800,000' },
+        { name: 'PIXEL 9 PRO', type: 'NEW', file: 'google-pixel-9-pro-group.jpg.jpg', old: '5,500,000', price: '4,950,000' },
+        { name: 'PIXEL 8 PRO', type: 'NEW', file: 'google-pixel-8-pro.jpg', old: '3,800,000', price: '3,450,000' },
+        { name: 'PIXEL 8a', type: 'NEW', file: 'google-pixel-8a-affordable-android-smartphone.jpg', old: '2,800,000', price: '2,200,000' },
+        { name: 'PIXEL 7 PRO', type: 'NEW', file: 'google-pixel-7-pro-high-performance-phone.jpg', old: '2,400,000', price: '2,150,000' },
+        { name: 'PIXEL 7', type: 'NEW', file: 'google-pixel-7-fast-performance-android-phone.jpg.jpg', old: '2,000,000', price: '1,600,000' },
+        { name: 'PIXEL 7a', type: 'NEW', file: 'google-pixel-7a.jpg.jpg', old: '1,750,000', price: '1,450,000' },
+        { name: 'PIXEL 6 PRO', type: 'NEW', file: 'google-pixel-6-pro-best-camera-android-phone.jpg', old: '1,800,000', price: '1,550,000' },
 
         // --- LAPTOPS ---
         { name: 'DELL TOUCHSCREEN', type: 'LAPTOP', file: 'Dell_Touchscreen_Laptop.jpg', old: '2,800,000', price: '2,450,000' },
@@ -2826,15 +3023,18 @@ footer {
         { name: 'HP LATEST', type: 'LAPTOP', file: 'HP_Premium_Laptop_Latest.jpg', old: '3,500,000', price: '3,150,000' },
 
         // --- TVs ---
-        { name: 'SAMSUNG 4K TV', type: 'TV', file: 'Samsung_Latest_TV.jpg.jpg', old: '3,200,000', price: '2,850,000' },
+        { name: 'SAMSUNG 4K TV', type: 'TV', file: 'Samsung_Crystal_UHD_TV.jpg', old: '3,200,000', price: '2,850,000' },
         { name: 'LG UHD TV', type: 'TV', file: 'LG_UHD_TV.jpg', old: '2,600,000', price: '2,300,000' },
         { name: 'HISENSE 4K', type: 'TV', file: 'hisense-smart-tv-4k-price-uganda.jpg.jpg', old: '2,400,000', price: '2,100,000' },
         { name: 'CURVED SUHD', type: 'TV', file: 'Samsung_Curved_SUHD_TV.jpg', old: '4,200,000', price: '3,750,000' },
         { name: 'CRYSTAL UHD', type: 'TV', file: 'Samsung_Crystal_UHD_TV.jpg', old: '2,900,000', price: '2,550,000' },
 
         // --- ACCESSORIES ---
-        { name: '25W CHARGER', type: 'ACC', file: 'Samsung_25W_Charger.jpg.jpg', old: '110,000', price: '85,000' },
-        { name: '45W PD ADAPTER', type: 'ACC', file: 'Samsung_45W_PD_Adapter_2.jpg', old: '180,000', price: '145,000' },
+        { name: '25W CHARGER', type: 'ACC', file: 'samsung-25W_Charger.jpg.jpg', old: '110,000', price: '85,000' },
+        { name: '45W PD ADAPTER', type: 'ACC', file: 'samsung-45w-pd-fast-charger-adapter.jpg', old: '180,000', price: '145,000' },
+        { name: 'BUDS 3 PRO', type: 'ACC', file: 'samsung-galaxy-buds-3-pro-premium-earbuds.jpg', old: '900,000', price: '700,000' },
+        { name: 'BUDS 2 PRO', type: 'ACC', file: 'samsung-galaxy-buds-2-pro-wireless-earbuds.jpg', old: '600,000', price: '450,000' },
+        { name: 'SCREEN GUARD', type: 'ACC', file: 'samsung-screen-guard-tempered-glass.jpg', old: '35,000', price: '25,000' },
         { name: 'GALAXY WATCH', type: 'ACC', file: 'samsung-smart-watch-galaxy-watch.jpg', old: '950,000', price: '820,000' },
         { name: 'BACK COVER', type: 'ACC', file: 'samsung-phone-back-cover-case.jpg', old: '65,000', price: '45,000' }
     ];
@@ -2881,7 +3081,7 @@ footer {
             card.style = "position: relative; height: 98%; width: 31%; background: #fff; border-radius: 14px; display: flex; flex-direction: column; align-items: center; border: 1px solid #d1d9e0; cursor: pointer; animation: fadeInUp 0.5s ease;";
             card.innerHTML = `
                 <div style="position: absolute; top: 10px; right: 10px; background: #ff4d4d; color: white; font-size: 8px; font-weight: bold; padding: 3px 6px; border-radius: 5px;">SALE</div>
-                <img src="${imgBase + item.file}" style="width: 80%; height: 50%; object-fit: contain; margin-top: 30px;">
+                <img src="${imgBase + item.file}" style="width: 80%; height: 50%; object-fit: contain; margin-top: 30px;" loading="lazy">
                 <div style="position: absolute; bottom: 0; width: 100%; background: #fff; padding: 12px 5px; text-align: center; border-top: 1px solid #e1e4e8;">
                     <div style="font-size: 10px; font-weight: 700; color: #000; margin-bottom: 2px;">${item.name}</div>
                     <div style="font-size: 9px; color: #888; text-decoration: line-through;">Shs ${item.old}</div>
@@ -2907,6 +3107,42 @@ footer {
     filterCategory('ALL');
     setInterval(() => { if(currentItems.length > 1) { currentIdx = (currentIdx + 1) % currentItems.length; updateMetro(); } }, 5000);
 </script>
+
+
+<!-- METRO PRODUCT STORE -->
+<section class="metro-section reveal" id="metro-store" aria-label="Product showcase">
+  <div class="metro-eyebrow">Live Inventory · Samsung Store Uganda · Kampala</div>
+  <div class="metro-cat-bar" id="metroCatBar">
+    <button class="metro-cat-btn active" onclick="metroFilter('ALL',this)">All Products</button>
+    <button class="metro-cat-btn" onclick="metroFilter('SAMSUNG',this)">Samsung Phones</button>
+    <button class="metro-cat-btn" onclick="metroFilter('NEW',this)">Google Pixel</button>
+    <button class="metro-cat-btn" onclick="metroFilter('TV',this)">Smart TVs</button>
+    <button class="metro-cat-btn" onclick="metroFilter('LAPTOP',this)">Laptops</button>
+    <button class="metro-cat-btn" onclick="metroFilter('ACC',this)">Accessories</button>
+  </div>
+  <div class="metro-inner">
+    <div class="metro-stage">
+      <div class="metro-cards" id="metroCards"></div>
+    </div>
+    <div class="metro-info">
+      <div>
+        <div class="metro-info-title">SAMSUNG<br><span>UGANDA</span></div>
+        <div class="metro-info-cat" id="metroCatLabel">Full Inventory</div>
+        <div class="metro-info-address">William Street · Kisa Kyaparamara Building<br>Kampala, Uganda</div>
+        <ul class="metro-info-list">
+          <li>✅ 100% Genuine Stock</li>
+          <li>💰 Wholesale Pricing Available</li>
+          <li>🚀 Delivery in 1 Hour — Kampala</li>
+          <li>🔄 Trade-Ins & Swaps Welcome</li>
+        </ul>
+      </div>
+      <a id="metroWaBtn" href="https://wa.me/256756922058?text=Hello%2C%20I%20want%20to%20order%20a%20product" class="metro-wa-btn" target="_blank">
+        💬 Order on WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="metro-thumbs" id="metroThumbs"></div>
+</section>
 
 <!-- CATEGORIES -->
 <section class="categories reveal">
@@ -3800,6 +4036,7 @@ footer {
   </div>
 </section>
 
+</main>
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">SAMSUNG STORE <span>·</span> UGANDA — William Street, Kampala</div>
@@ -3856,7 +4093,194 @@ footer {
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+// ═══════════════════════════════════════════════
+// CAROUSEL STOCK TAB
+// ═══════════════════════════════════════════════
+(function() {
+  const tab = document.getElementById('carousel-tab');
+  if (!tab) return;
+  const slideImg   = document.getElementById('slide-img');
+  const slideLabel = document.getElementById('slide-label');
+  const slidePrice = document.getElementById('slide-price');
+  const BASE = 'https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/assets/';
+  const SLIDES = [
+    { name:'S26 ULTRA',   price:'UGX 6,800,000', file:'samsung-galaxy-s26-new-stock-b118.jpg' },
+    { name:'S25 ULTRA',   price:'UGX 4,950,000', file:'samsung-galaxy-s25-ultra-brand-new.jpg.jpg' },
+    { name:'Z FOLD 7',    price:'UGX 9,800,000', file:'samsung-galaxy-z-fold-7-latest-foldable-phone.jpg' },
+    { name:'Z FLIP 7',    price:'UGX 5,800,000', file:'samsung-galaxy-z-flip-7-brand-new.jpg' },
+    { name:'S24 ULTRA',   price:'UGX 4,100,000', file:'samsung-galaxy-s24-ultra-swap-kampala.jpga0b.jpg' },
+    { name:'S23 ULTRA',   price:'UGX 3,200,000', file:'samsung-s23-ultra-kampala-priice.jpg' },
+    { name:'S22 ULTRA',   price:'UGX 2,150,000', file:'samsung-galaxy-s22-ultra-b118-basement.jpg' },
+    { name:'Z FOLD 6',    price:'UGX 5,900,000', file:'samsung-galaxy-z-fold-6-wholesale-b118.jpg.jpg' },
+    { name:'Z FLIP 6',    price:'UGX 4,800,000', file:'samsung-galaxy-z-flip-6-brand-new.jpg.jpg' },
+    { name:'PIXEL 10 PRO',price:'UGX 5,800,000', file:'google-pixel-10-pro-black-color.jpg' },
+    { name:'S21 ULTRA',   price:'UGX 1,650,000', file:'samsung-s21-ultra-used-phones-uganda.jpg' },
+  ];
+  let carouselIdx = 0;
+  function carouselNext() {
+    carouselIdx = (carouselIdx + 1) % SLIDES.length;
+    slideImg.style.opacity = 0;
+    setTimeout(() => {
+      slideImg.src = BASE + SLIDES[carouselIdx].file;
+      slideLabel.textContent = SLIDES[carouselIdx].name;
+      slidePrice.textContent = SLIDES[carouselIdx].price;
+      slideImg.style.opacity = 1;
+    }, 500);
+  }
+  setInterval(carouselNext, 2500);
+  let carouselOpen = false;
+  window.toggleCarousel = function() {
+    carouselOpen = !carouselOpen;
+    tab.style.right = carouselOpen ? '0px' : '-260px';
+    if (carouselOpen) setTimeout(() => { tab.style.right = '-260px'; carouselOpen = false; }, 10000);
+  };
+  // Peek on load
+  setTimeout(() => {
+    tab.style.right = '0px'; carouselOpen = true;
+    setTimeout(() => { tab.style.right = '-260px'; carouselOpen = false; }, 5000);
+  }, 2000);
+})();
+
+// ═══════════════════════════════════════════════
+// METRO PRODUCT GALLERY
+// ═══════════════════════════════════════════════
+(function() {
+  const BASE = 'https://raw.githubusercontent.com/wambugaivan-oss/Samsung-online-Store-uganda/main/assets/';
+  const WA = '256756922058';
+  const METRO_ITEMS = [
+    { name:'S24 ULTRA',       type:'SAMSUNG', file:'samsung-galaxy-s24-ultra-swap-kampala.jpga0b.jpg', old:'4,800,000', price:'4,450,000' },
+    { name:'S25 ULTRA',       type:'SAMSUNG', file:'samsung-galaxy-s25-ultra-brand-new.jpg.jpg',       old:'5,800,000', price:'4,950,000' },
+    { name:'S23 ULTRA',       type:'SAMSUNG', file:'samsung-s23-ultra-kampala-priice.jpg',              old:'3,500,000', price:'3,150,000' },
+    { name:'S21 ULTRA',       type:'SAMSUNG', file:'samsung-s21-ultra-used-phones-uganda.jpg',          old:'1,900,000', price:'1,650,000' },
+    { name:'Z FOLD 7',        type:'SAMSUNG', file:'samsung-galaxy-z-fold-7-latest-foldable-phone.jpg', old:'12,000,000', price:'9,800,000' },
+    { name:'Z FOLD 6',        type:'SAMSUNG', file:'samsung-galaxy-z-fold-6-wholesale-b118.jpg.jpg',    old:'6,500,000', price:'5,900,000' },
+    { name:'Z FOLD 5',        type:'SAMSUNG', file:'samsung-galaxy-z-fold-5-smartphone.jpg.jpg',        old:'7,500,000', price:'6,200,000' },
+    { name:'Z FOLD 4',        type:'SAMSUNG', file:'samsung-galaxy-z-fold-4-brand-new.jpg.jpg',         old:'6,000,000', price:'5,000,000' },
+    { name:'Z FLIP 7',        type:'SAMSUNG', file:'samsung-galaxy-z-flip-7-brand-new.jpg',             old:'7,000,000', price:'5,800,000' },
+    { name:'Z FLIP 6',        type:'SAMSUNG', file:'samsung-galaxy-z-flip-6-brand-new.jpg.jpg',         old:'5,800,000', price:'4,800,000' },
+    { name:'Z FLIP 5',        type:'SAMSUNG', file:'samsung-galaxy-z-flip-5-brand-new.jpg.jpg',         old:'4,500,000', price:'3,800,000' },
+    { name:'Z FLIP 4',        type:'SAMSUNG', file:'samsung-galaxy-z-flip-4-brand-new.jpg.jpg',         old:'2,800,000', price:'2,500,000' },
+    { name:'A56 5G',          type:'SAMSUNG', file:'samsung-galaxy-a56-5g-brand-new-smartphone.jpg',    old:'2,000,000', price:'1,650,000' },
+    { name:'A16 5G',          type:'SAMSUNG', file:'samsung-galaxy-a16-5g-smartphone.jpg',              old:'950,000',   price:'750,000' },
+    { name:'S22 ULTRA',       type:'SAMSUNG', file:'samsung-galaxy-s22-ultra-b118-basement.jpg',        old:'2,400,000', price:'2,150,000' },
+    { name:'S20 ULTRA',       type:'SAMSUNG', file:'samsung-galaxy-s20-ultra-wholesale.jpg',            old:'1,500,000', price:'1,250,000' },
+    { name:'PIXEL 10 PRO',    type:'NEW',     file:'google-pixel-10-pro-black-color.jpg',               old:'6,500,000', price:'5,800,000' },
+    { name:'PIXEL 9 PRO',     type:'NEW',     file:'google-pixel-9-pro-group.jpg.jpg',                  old:'5,500,000', price:'4,950,000' },
+    { name:'PIXEL 8 PRO',     type:'NEW',     file:'google-pixel-8-pro.jpg',                            old:'3,800,000', price:'3,450,000' },
+    { name:'PIXEL 8a',        type:'NEW',     file:'google-pixel-8a-affordable-android-smartphone.jpg', old:'2,800,000', price:'2,200,000' },
+    { name:'PIXEL 7 PRO',     type:'NEW',     file:'google-pixel-7-pro-high-performance-phone.jpg',     old:'2,400,000', price:'2,150,000' },
+    { name:'PIXEL 7',         type:'NEW',     file:'google-pixel-7-fast-performance-android-phone.jpg.jpg', old:'2,000,000', price:'1,600,000' },
+    { name:'PIXEL 7a',        type:'NEW',     file:'google-pixel-7a.jpg.jpg',                           old:'1,750,000', price:'1,450,000' },
+    { name:'PIXEL 6 PRO',     type:'NEW',     file:'google-pixel-6-pro-best-camera-android-phone.jpg',  old:'1,800,000', price:'1,550,000' },
+    { name:'DELL TOUCH',      type:'LAPTOP',  file:'Dell_Touchscreen_Laptop.jpg',                       old:'2,800,000', price:'2,450,000' },
+    { name:'HP PREMIUM',      type:'LAPTOP',  file:'HP_Premium_Laptop_2.jpg',                           old:'3,100,000', price:'2,750,000' },
+    { name:'HP LATEST',       type:'LAPTOP',  file:'HP_Premium_Laptop_Latest.jpg',                      old:'3,500,000', price:'3,150,000' },
+    { name:'SAMSUNG 4K TV',   type:'TV',      file:'Samsung_Crystal_UHD_TV.jpg',                        old:'3,200,000', price:'2,850,000' },
+    { name:'LG UHD TV',       type:'TV',      file:'LG_UHD_TV.jpg',                                     old:'2,600,000', price:'2,300,000' },
+    { name:'HISENSE 4K',      type:'TV',      file:'hisense-smart-tv-4k-price-uganda.jpg.jpg',           old:'2,400,000', price:'2,100,000' },
+    { name:'CURVED SUHD',     type:'TV',      file:'Samsung_Curved_SUHD_TV.jpg',                        old:'4,200,000', price:'3,750,000' },
+    { name:'25W CHARGER',     type:'ACC',     file:'samsung-25W_Charger.jpg.jpg',                        old:'110,000',   price:'85,000' },
+    { name:'45W ADAPTER',     type:'ACC',     file:'samsung-45w-pd-fast-charger-adapter.jpg',            old:'180,000',   price:'145,000' },
+    { name:'BUDS 3 PRO',      type:'ACC',     file:'samsung-galaxy-buds-3-pro-premium-earbuds.jpg',      old:'900,000',   price:'700,000' },
+    { name:'BUDS 2 PRO',      type:'ACC',     file:'samsung-galaxy-buds-2-pro-wireless-earbuds.jpg',     old:'600,000',   price:'450,000' },
+    { name:'SCREEN GUARD',    type:'ACC',     file:'samsung-screen-guard-tempered-glass.jpg',            old:'35,000',    price:'25,000' },
+    { name:'GALAXY WATCH',    type:'ACC',     file:'samsung-smart-watch-galaxy-watch.jpg',               old:'950,000',   price:'820,000' },
+    { name:'BACK COVER',      type:'ACC',     file:'samsung-phone-back-cover-case.jpg',                  old:'65,000',    price:'45,000' },
+  ];
+  let metroItems = [...METRO_ITEMS];
+  let metroIdx = 0;
+  const cardsEl  = document.getElementById('metroCards');
+  const thumbsEl = document.getElementById('metroThumbs');
+  const waBtn    = document.getElementById('metroWaBtn');
+  const catLabel = document.getElementById('metroCatLabel');
+  if (!cardsEl || !thumbsEl) return;
+
+  window.metroFilter = function(type, btn) {
+    document.querySelectorAll('.metro-cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    metroItems = type === 'ALL' ? [...METRO_ITEMS] : METRO_ITEMS.filter(i => i.type === type);
+    metroIdx = 0;
+    const labels = { ALL:'Full Inventory', SAMSUNG:'Samsung Phones', NEW:'Google Pixel Phones', TV:'Smart TVs', LAPTOP:'Laptops', ACC:'Accessories' };
+    catLabel.textContent = labels[type] || type;
+    buildMetroThumbs();
+    renderMetroCards();
+  };
+
+  function buildMetroThumbs() {
+    thumbsEl.innerHTML = '';
+    metroItems.forEach((item, i) => {
+      const th = document.createElement('img');
+      th.src = BASE + item.file;
+      th.loading = 'lazy';
+      th.alt = item.name + ' price Uganda';
+      th.className = 'metro-thumb' + (i === 0 ? ' active' : '');
+      th.addEventListener('click', () => { metroIdx = i; renderMetroCards(); });
+      thumbsEl.appendChild(th);
+    });
+  }
+
+  function renderMetroCards() {
+    if (!metroItems.length) return;
+    cardsEl.innerHTML = '';
+    const count = Math.min(3, metroItems.length);
+    for (let i = 0; i < count; i++) {
+      const item = metroItems[(metroIdx + i) % metroItems.length];
+      const card = document.createElement('div');
+      card.className = 'metro-card';
+      card.innerHTML = `
+        <div class="metro-card-badge">SALE</div>
+        <img src="${BASE + item.file}" alt="${item.name} price Uganda Kampala" loading="lazy">
+        <div class="metro-card-body">
+          <div class="metro-card-name">${item.name}</div>
+          <div class="metro-card-old">Shs ${item.old}</div>
+          <div class="metro-card-price">Shs ${item.price}</div>
+        </div>`;
+      card.addEventListener('click', () => {
+        window.open('https://wa.me/' + WA + '?text=Hello%2C%20I%20want%20to%20order%3A%20' + encodeURIComponent(item.name) + '%20at%20Shs%20' + encodeURIComponent(item.price), '_blank');
+      });
+      cardsEl.appendChild(card);
+    }
+    const thumbEls = thumbsEl.querySelectorAll('.metro-thumb');
+    thumbEls.forEach((t, i) => {
+      t.classList.toggle('active', i === metroIdx);
+    });
+    const activeThumb = thumbEls[metroIdx];
+    if (activeThumb && thumbsEl) {
+      // Scroll only the thumbnail strip horizontally — never touches page Y position
+      const thumbLeft = activeThumb.offsetLeft;
+      const thumbWidth = activeThumb.offsetWidth;
+      const containerWidth = thumbsEl.offsetWidth;
+      thumbsEl.scrollLeft = thumbLeft - (containerWidth / 2) + (thumbWidth / 2);
+    }
+    if (waBtn) waBtn.href = 'https://wa.me/' + WA + '?text=Hello%2C%20I%27m%20interested%20in%20the%20' + encodeURIComponent(metroItems[metroIdx].name);
+  }
+
+  // Init
+  buildMetroThumbs();
+  renderMetroCards();
+  setInterval(() => {
+    if (metroItems.length > 1) { metroIdx = (metroIdx + 1) % metroItems.length; renderMetroCards(); }
+  }, 5000);
+})();
+</script>
+<script>
+
+// ── PAGE LOADER ──
+window.addEventListener('load', () => {
+  const loader = document.getElementById('page-loader');
+  if (loader) setTimeout(() => loader.classList.add('hidden'), 800);
+});
+
+// ── SCROLL PROGRESS BAR ──
+window.addEventListener('scroll', () => {
+  const el = document.getElementById('scrollProgress');
+  if (!el) return;
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  el.style.width = (scrollTop / scrollHeight * 100) + '%';
+}, { passive: true });
+
 // ── CURSOR ──
 const cursor = document.getElementById('cursor');
 document.addEventListener('mousemove', e => {
@@ -4698,6 +5122,66 @@ function searchCatPage(input, gridId) {
 }
 
 </script>
+<!-- Hub link -->
+<a onclick="window.open('https://tech-store-uganda.vercel.app/','_blank')" 
+   style="position:fixed;bottom:160px;right:28px;z-index:9998;background:#111;color:white;font-family:sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 18px;text-decoration:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.4);" 
+   onmouseover="this.style.opacity='0.8'" 
+   onmouseout="this.style.opacity='1'"
+   aria-label="Visit all stores hub">🏠 All Stores →</a>
 
-</body><a onclick="window.open('https://tech-store-uganda.vercel.app/','_blank')" style="position:fixed;bottom:160px;right:28px;z-index:9998;background:#111;color:white;font-family:sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 18px;text-decoration:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.4);" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">🏠 All Stores →</a>
+<!-- ══════════════════════════════════════════
+     CUSTOM CURSOR (desktop only)
+     ══════════════════════════════════════════ -->
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════
+     CART TOAST NOTIFICATION
+     ══════════════════════════════════════════ -->
+<div class="cart-toast" id="cartToast" role="status" aria-live="polite"></div>
+
+<!-- ══════════════════════════════════════════
+     CART DRAWER OVERLAY
+     ══════════════════════════════════════════ -->
+<div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-label="Shopping cart">
+  <div class="cart-panel">
+    <div class="cart-panel-header">
+      <div class="cart-panel-title">&#128722; Your Cart</div>
+      <button class="cart-close" onclick="closeCart()" aria-label="Close cart">&#x2715;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <span style="font-size:2rem">&#128722;</span>
+        <span>Your cart is empty</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-subtotal">
+        <span class="cart-subtotal-label">Total</span>
+        <span class="cart-subtotal-amount" id="cartTotal">UGX 0</span>
+      </div>
+      <button class="cart-checkout-btn" onclick="openCheckout()">Checkout &#8594;</button>
+      <button class="cart-wa-btn" onclick="cartOrderViaWA()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order via WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHECKOUT OVERLAY
+     ══════════════════════════════════════════ -->
+<div class="checkout-overlay" id="checkoutOverlay" role="dialog" aria-modal="true" aria-label="Checkout">
+  <div class="checkout-modal">
+    <div class="checkout-header">
+      <div class="checkout-title">Checkout</div>
+      <button class="cart-close" onclick="closeCheckout()" aria-label="Close checkout">&#x2715;</button>
+    </div>
+    <div class="checkout-body" id="checkoutBody">
+    </div>
+  </div>
+</div>
+
+
+</body>
 </html>
